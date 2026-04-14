@@ -1,128 +1,37 @@
-👨‍💻 About Me
+# 🎯 Interview Revision — Nakul Surve
 
-Q1. Tell me about yourself and walk me through your background.
+---
 
-Answer:
+## Q1. Tell me about yourself and walk me through your background.
 
-I'm Nakul Surve, a self-taught Cloud and DevOps engineer based in Pune.
-I spent several years as a professional pastry chef before making a deliberate pivot into tech.
+**A:** I'm Nakul Surve, a self-taught Cloud and DevOps engineer based in Pune. I spent several years as a professional pastry chef before making a deliberate pivot into tech. What drew me to the transition was realising I was always drawn to the systems behind things — how do you maintain consistency when producing 200 desserts a night? That's operational thinking. When I discovered DevOps and SRE, I felt like I found the technical version of what I was already doing. I built a structured self-learning path: Linux, networking, AWS, then Terraform. I validated that with two certifications — AWS Certified Solutions Architect Associate and HashiCorp Terraform Associate. I'm also building a real hands-on project called HBO-Stream: a video streaming platform on AWS using EC2, RDS PostgreSQL, ALB, S3, CloudFront — all provisioned with Terraform. My goal is a Cloud or Junior DevOps role where I can contribute from day one and grow toward SRE.
 
-What drew me to the transition was realizing I was always interested in systems — like maintaining consistency while producing 200+ desserts daily. That’s operational thinking.
+---
 
-When I discovered DevOps and SRE, it felt like the technical version of what I was already doing.
+## Q3. Walk me through one AWS project you've built. What did you architect and what problems did you hit?
 
-📚 Learning Path
-Linux
-Networking
-AWS
-Terraform
-🏆 Certifications
-AWS Certified Solutions Architect – Associate
-HashiCorp Terraform Associate
-🔥 Current Project
+**A:** HBO-Stream is a cost-optimised video streaming platform on AWS, fully provisioned with Terraform. Architecture: custom VPC with public and private subnets across two AZs. An ALB in the public subnet handles incoming traffic. The app layer runs on EC2 using Docker Compose — I chose this over EKS to stay within Free Tier while still demonstrating containerised deployment. RDS PostgreSQL sits in a private subnet. S3 stores content, served via CloudFront. Terraform manages everything with an S3 backend and DynamoDB state locking. Real problems I hit: ALB required subnets in at least two AZs — learned this from an actual AWS error. RDS had backup retention constraints I had to work around. CIDR conflicts in my subnet design required a mid-project rearchitecture. Each error was a real lesson. The errors are the curriculum.
 
-HBO-Stream — A video streaming platform built on AWS:
+---
 
-EC2 (App Layer)
-RDS PostgreSQL (Database)
-S3 (Storage)
-CloudFront (CDN)
-ALB (Load Balancer)
-Fully provisioned using Terraform
+## Q4. Where do you see yourself in 2 years? Why SRE specifically?
 
-🎯 Goal: Secure a Cloud / Junior DevOps role and grow into SRE
+**A:** Honest roadmap: in 6–12 months, I want to be a contributing Junior DevOps engineer — writing Terraform, managing CI/CD pipelines, supporting infrastructure, participating in on-call rotations. In year two, I want to have developed enough observability and incident response skills to operate closer to an SRE function. Why SRE? Because it combines engineering rigour with operational reliability — and it's driven by data. The error budget model — define an SLO, measure burn rate, make decisions based on reliability math — that's the thinking I want to be doing. I've read the Google SRE book. I understand toil, post-mortems, and the difference between reactive ops and proactive reliability engineering. I'm not trying to shortcut to SRE. I want to earn it. I'm asking for a junior role because that's where I genuinely am — I'd rather be honest than oversell and underdeliver.
 
-🏗️ AWS Project Deep Dive
+---
 
-Q3. Walk me through one AWS project you've built. What did you architect and what problems did you hit?
+## "What is your greatest strength?"
 
-Answer:
+**A:** My biggest strength is troubleshooting and persistence. In DevOps, things rarely work the first time. For example, when setting up my HBO-Stream infrastructure, I ran into several CIDR block conflicts. I didn't stop until I understood the networking logic behind it and fixed the Terraform code.
 
-📐 Architecture Overview
-Custom VPC with public & private subnets across 2 Availability Zones
-Application Load Balancer (ALB) for traffic handling
-EC2 (Docker Compose) for application layer (cost-optimized vs EKS)
-RDS PostgreSQL in private subnet
-S3 + CloudFront for content delivery
-Terraform for full infrastructure provisioning
-S3 backend
-DynamoDB state locking
-⚠️ Real Challenges Faced
-ALB requires subnets in at least 2 AZs
-RDS backup retention constraints
-CIDR block conflicts → required re-architecting
+---
 
-💡 Key Learning:
+## "Why should we hire you without a CS degree?"
 
-Errors are the real curriculum. Every failure improved system-level understanding.
+**A:** While I don't have a formal degree, I have spent the last year treating my self-study like a full-time job. I've built actual infrastructure from scratch, passed professional-grade certifications, and I'm highly adaptable. I'm not just here because of a degree; I'm here because I actually love building and automating systems.
 
-🎯 Career Goals
+---
 
-Q4. Where do you see yourself in 2 years? Why SRE specifically?
+## "How do you handle a situation where you don't know the answer?"
 
-Answer:
-
-📅 Roadmap
-0–12 Months:
-Junior DevOps Engineer
-Work with Terraform, CI/CD pipelines
-Support infrastructure & on-call
-Year 2:
-Transition toward SRE responsibilities
-Improve observability & incident response skills
-🤖 Why SRE?
-Combines engineering + operations
-Driven by data & reliability metrics
-Interest in:
-SLOs & error budgets
-Incident management
-Post-mortems
-Reducing toil
-
-📘 Inspired by: Google SRE Book
-
-Not trying to shortcut to SRE — aiming to earn it through real experience
-
-💪 Strengths & Mindset
-💡 Greatest Strength
-
-Q: What is your greatest strength?
-
-Answer:
-
-My biggest strength is troubleshooting and persistence.
-
-In DevOps, things rarely work on the first attempt.
-While building HBO-Stream, I faced multiple CIDR conflicts and didn’t stop until I understood the networking logic and fixed the Terraform configuration.
-
-🎓 No CS Degree?
-
-Q: Why should we hire you without a CS degree?
-
-Answer:
-
-While I don’t have a formal degree, I’ve treated my self-learning like a full-time job.
-
-Built real-world infrastructure projects
-Earned industry-recognized certifications
-Highly adaptable and self-driven
-
-I'm here because I genuinely love building and automating systems — not just because of a degree.
-
-🧠 Handling Unknowns
-
-Q: How do you handle a situation where you don't know the answer?
-
-Answer:
-
-Check official documentation (e.g., Terraform docs)
-Explore community resources (Stack Overflow, GitHub issues)
-If stuck after ~30 minutes:
-Reach out to seniors/peers
-Share clear context + what’s already tried
-
-🎯 Focus: Efficient problem-solving, not guessing
-
-📌 Final Note
-
-"I'm not trying to oversell myself — I'd rather be honest, learn fast, and deliver real value from day one."
+**A:** First, I check the official documentation — like the HashiCorp docs for Terraform. If that doesn't solve it, I use community resources like StackOverflow or GitHub issues. If I'm still stuck after 30 minutes of deep-diving, I'll reach out to a senior or a peer with a clear summary of what I've already tried.
