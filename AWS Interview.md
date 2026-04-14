@@ -62,64 +62,64 @@ CloudWatch collects metrics, logs, and events from AWS resources. It allows you 
 
 ---
 
-# 🛠️ AWS Scenario-Based Interview Q&A — Revision Notes
+# ☁️ AWS Services & Architecture — Interview Q&A Revision
 
 ---
 
-## 11. How would you secure an application using IAM roles and policies?
+## 1. What is the difference between RDS and DynamoDB?
 
-I would follow the principle of least privilege, creating IAM policies that grant only required permissions. Then I'd attach them to IAM roles instead of users, allowing services like EC2 or Lambda to securely access AWS resources. I'd also enable MFA and use temporary credentials via roles for better security.
-
----
-
-## 12. Your S3 bucket is accidentally made public. How would you fix and prevent this?
-
-First, I would immediately block public access at the bucket level and remove any public policies or ACLs. Then I'd enable S3 Block Public Access and use bucket policies with least privilege. To prevent future issues, I'd enable AWS Config rules and CloudTrail alerts for public access detection.
+RDS is a managed relational database service that uses SQL and supports structured data with relationships. DynamoDB is a NoSQL key-value database designed for high scalability and low latency. RDS is best for complex queries, while DynamoDB is ideal for large-scale, fast, and serverless applications.
 
 ---
 
-## 13. How would you monitor and troubleshoot an application using CloudWatch?
+## 2. What is CloudFront and when would you use it?
 
-I would use CloudWatch metrics and dashboards to monitor CPU, memory, and latency. Then I'd enable CloudWatch Logs to analyze application logs and set alarms for anomalies. For troubleshooting, I'd correlate logs with metrics and use CloudWatch Insights for deeper analysis.
-
----
-
-## 14. You want zero downtime deployment. How would you achieve this in AWS?
-
-I would use Blue-Green deployment or Rolling updates with services like Auto Scaling and Load Balancer. Traffic would gradually shift to the new version while keeping the old version active. This ensures no downtime and allows quick rollback if issues occur.
+CloudFront is a CDN (Content Delivery Network) that caches content at edge locations worldwide. It reduces latency by serving content closer to users. It's used for websites, APIs, and streaming to improve performance and reduce load on origin servers.
 
 ---
 
-## 15. How would you design a multi-tier architecture (frontend, backend, database) on AWS?
+## 3. What is Route 53 and how does routing work?
 
-I'd use ALB + EC2/Lambda for the frontend layer, backend services in private subnets, and a database like RDS in a private subnet. Security groups would restrict access between tiers. I'd also use Auto Scaling and load balancing for high availability.
-
----
-
-## 16. Your application needs to serve millions of users globally. How would you architect it?
-
-I would use CloudFront CDN for global content delivery and Route 53 latency-based routing. Backend services would run on Auto Scaling groups across multiple regions. I'd also use caching (ElastiCache) and database replication for performance and scalability.
+Route 53 is AWS's DNS service that routes user requests to the correct resources. It supports routing policies like simple, weighted, latency-based, failover, and geolocation. These policies help in load balancing, failover, and global traffic management.
 
 ---
 
-## 17. How would you migrate an on-premise application to AWS with minimal downtime?
+## 4. What is the difference between horizontal scaling and vertical scaling in AWS?
 
-I would use a lift-and-shift (rehost) strategy using AWS Application Migration Service or DMS for databases. Data would be replicated continuously until cutover. Then I'd switch traffic using DNS with minimal downtime.
-
----
-
-## 18. You need to restrict access between services within a VPC. How would you implement this?
-
-I would use Security Groups for instance-level control and NACLs for subnet-level restrictions. Only required ports and IP ranges would be allowed between services. Additionally, I'd use private subnets and avoid exposing internal services to the internet.
+Vertical scaling means increasing the size of a single instance (e.g., upgrading EC2). Horizontal scaling means adding more instances to distribute load. Horizontal scaling is preferred in AWS for better availability and fault tolerance.
 
 ---
 
-## 19. Your application is slow due to database bottlenecks. How would you optimize performance?
+## 5. What is Elastic Beanstalk?
 
-I would add read replicas to offload read traffic and use caching (Redis/ElastiCache). I'd also optimize queries, add indexing, and consider scaling vertically or horizontally. Monitoring with CloudWatch would help identify exact bottlenecks.
+Elastic Beanstalk is a PaaS service that simplifies application deployment. You just upload your code, and AWS handles provisioning, scaling, and monitoring. It's useful for developers who don't want to manage infrastructure manually.
 
 ---
 
-## 20. How would you design a disaster recovery (DR) strategy in AWS?
+## 6. What is CloudFormation and why is it used?
 
-I would choose a strategy based on RTO/RPO like backup & restore, pilot light, warm standby, or multi-region active-active. Data would be replicated across regions using services like S3 replication or RDS snapshots. Regular DR drills and automation ensure quick recovery.
+CloudFormation is an Infrastructure as Code (IaC) service used to define AWS resources using templates. It allows you to automate provisioning and manage infrastructure consistently. This helps in version control and repeatable deployments.
+
+---
+
+## 7. What is the difference between SNS and SQS?
+
+SNS (Simple Notification Service) is a pub/sub messaging service that pushes messages to multiple subscribers. SQS (Simple Queue Service) is a message queue that stores messages for asynchronous processing. SNS is used for fan-out notifications, while SQS is used for decoupling services.
+
+---
+
+## 8. What are Security Groups and how are they different from NACLs?
+
+Security Groups act as stateful firewalls at the instance level. NACLs (Network ACLs) are stateless and operate at the subnet level. Security Groups are more commonly used for fine-grained control, while NACLs provide an additional security layer.
+
+---
+
+## 9. What is high availability in AWS and how do you achieve it?
+
+High availability means ensuring applications remain accessible even during failures. It is achieved by deploying resources across multiple Availability Zones, using load balancers and Auto Scaling. Redundancy and failover mechanisms are key.
+
+---
+
+## 10. How would you design a highly available and scalable architecture on AWS?
+
+I would deploy applications across multiple AZs using Auto Scaling Groups and Load Balancers. Use managed services like RDS with Multi-AZ and S3 for durability. Additionally, integrate CloudFront and Route 53 for global performance and failover.
