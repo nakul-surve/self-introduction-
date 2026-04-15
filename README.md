@@ -12,6 +12,16 @@ Currently, I’m looking for an opportunity to start my career in DevOps and gro
 
 ---
 
+## "Why DevOps / Cloud?
+
+I chose DevOps because it focuses on automation, scalability, and real-world system management. I like the idea of building systems that can deploy and run applications efficiently.
+
+Cloud platforms like AWS make it possible to build and scale applications easily, and DevOps tools like Docker and Kubernetes make deployments faster and more reliable.
+
+This combination of development, operations, and automation is what attracted me to this field.
+
+---
+
 ## Q3. Walk me through one AWS project you've built. What did you architect and what problems did you hit?
 
 **A:** HBO-Stream is a cost-optimised video streaming platform on AWS, fully provisioned with Terraform. Architecture: custom VPC with public and private subnets across two AZs. An ALB in the public subnet handles incoming traffic. The app layer runs on EC2 using Docker Compose — I chose this over EKS to stay within Free Tier while still demonstrating containerised deployment. RDS PostgreSQL sits in a private subnet. S3 stores content, served via CloudFront. Terraform manages everything with an S3 backend and DynamoDB state locking. Real problems I hit: ALB required subnets in at least two AZs — learned this from an actual AWS error. RDS had backup retention constraints I had to work around. CIDR conflicts in my subnet design required a mid-project rearchitecture. Each error was a real lesson. The errors are the curriculum.
@@ -39,3 +49,6 @@ Currently, I’m looking for an opportunity to start my career in DevOps and gro
 ## "How do you handle a situation where you don't know the answer?"
 
 **A:** First, I check the official documentation — like the HashiCorp docs for Terraform. If that doesn't solve it, I use community resources like StackOverflow or GitHub issues. If I'm still stuck after 30 minutes of deep-diving, I'll reach out to a senior or a peer with a clear summary of what I've already tried.
+
+---
+
