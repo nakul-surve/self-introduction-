@@ -4,7 +4,11 @@
 
 ## Q1. Tell me about yourself and walk me through your background.
 
-**A:** I'm Nakul Surve, a self-taught Cloud and DevOps engineer based in Pune. I spent several years as a professional pastry chef before making a deliberate pivot into tech. What drew me to the transition was realising I was always drawn to the systems behind things — how do you maintain consistency when producing 200 desserts a night? That's operational thinking. When I discovered DevOps and SRE, I felt like I found the technical version of what I was already doing. I built a structured self-learning path: Linux, networking, AWS, then Terraform. I validated that with two certifications — AWS Certified Solutions Architect Associate and HashiCorp Terraform Associate. I'm also building a real hands-on project called HBO-Stream: a video streaming platform on AWS using EC2, RDS PostgreSQL, ALB, S3, CloudFront — all provisioned with Terraform. My goal is a Cloud or Junior DevOps role where I can contribute from day one and grow toward SRE.
+Hi, my name is Nakul Surve, and I’m a self-taught Cloud and DevOps engineer based in Pune.
+
+I started my career as a professional pastry chef, but over time I realized I was more interested in how systems work behind the scenes—how things are built, automated, and scaled. That curiosity led me to transition into the tech field, specifically Cloud and DevOps. I have hands-on experience with AWS, Docker, and Kubernetes, and I’ve worked on deploying applications using CI/CD pipelines. I’m also AWS Solutions Architect certified.
+
+Currently, I’m looking for an opportunity to start my career in DevOps and grow my skills in a real-world environment
 
 ---
 
