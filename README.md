@@ -6,7 +6,7 @@
 
 Hi, my name is Nakul Surve, and I’m a self-taught Cloud and DevOps engineer based in Pune.
 
-I started my career as a professional pastry chef, but over time I realized I was more interested in how systems work behind the scenes—how things are built, automated, and scaled. That curiosity led me to transition into the tech field, specifically Cloud and DevOps. I have hands-on experience with AWS, Docker, and Kubernetes, and I’ve worked on deploying applications using CI/CD pipelines. I’m also AWS Solutions Architect certified.
+I started my career as a professional pastry chef, but I wanted to move into IT. I became interested in cloud and DevOps, so I started learning AWS, Docker, and Kubernetes.and I’ve worked on deploying applications using CI/CD pipelines. I’m also AWS Solutions Architect certified.
 
 Currently, I’m looking for an opportunity to start my career in DevOps and grow my skills in a real-world environment
 
