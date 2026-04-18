@@ -24,8 +24,9 @@ This combination of development, operations, and automation is what attracted me
 
 ## Q3. Walk me through one AWS project you've built. What did you architect and what problems did you hit?
 
-**A:** HBO-Stream is a cost-optimised video streaming platform on AWS, fully provisioned with Terraform. Architecture: custom VPC with public and private subnets across two AZs. An ALB in the public subnet handles incoming traffic. The app layer runs on EC2 using Docker Compose — I chose this over EKS to stay within Free Tier while still demonstrating containerised deployment. RDS PostgreSQL sits in a private subnet. S3 stores content, served via CloudFront. Terraform manages everything with an S3 backend and DynamoDB state locking. Real problems I hit: ALB required subnets in at least two AZs — learned this from an actual AWS error. RDS had backup retention constraints I had to work around. CIDR conflicts in my subnet design required a mid-project rearchitecture. Each error was a real lesson. The errors are the curriculum.
+**A:** “I built a project called HBO-Stream, a cost-optimized video streaming platform on AWS. I used a VPC with public and private subnets across two AZs. An ALB handles traffic, and the app runs on EC2 using Docker Compose. I used RDS PostgreSQL, S3 for storage, and CloudFront for fast delivery. Everything was provisioned using Terraform.
 
+I faced issues like ALB requiring multiple AZs and CIDR conflicts, which I solved by redesigning the architecture.”
 ---
 
 ## Q4. Where do you see yourself in 2 years? Why SRE specifically?
