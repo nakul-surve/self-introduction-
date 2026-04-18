@@ -1,0 +1,3 @@
+Walk me through one AWS project you've built. What did you architect and what problems did you hit?
+
+A: “I built a project called HBO-Stream, a cost-optimized video streaming platform on AWS. I used a VPC with public and private subnets across two AZs. An ALB handles traffic, and the app runs on EC2 using Docker Compose. I used RDS PostgreSQL for database, S3 for storage, and CloudFront for fast delivery. Everything was provisioned using Terraform with S3 backend and DynamoDB locking. I faced issues like ALB requiring multiple AZs and CIDR conflicts, which I solved by redesigning the architecture.”
