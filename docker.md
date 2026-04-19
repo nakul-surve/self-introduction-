@@ -58,3 +58,30 @@ docker stop sends a SIGTERM signal, giving the container a chance to shut down g
 
 ---
 
+11- what is .dockerignore file? 
+
+It works just like .gitignore — it tells Docker which files to exclude when copying your project into the image (like node_modules, .git, or secrets). This makes builds faster and prevents accidentally leaking sensitive files into images.
+
+---
+
+12- what are docker volume and when would you use them?
+
+Volumes are a way to persist data outside a container's lifecycle. Since containers are stateless by default, any data created inside is lost when the container stops. Volumes store data on the host so databases or file uploads survive restarts.
+
+---
+
+13- what are the differend docker networking modes? 
+
+bridge (default) creates a private network between containers on the same host. host shares the container's network with the host machine. none disables all networking. In production, you create custom bridge networks so containers can talk to each other by name.
+
+---
+
+14- how do contaniers communicate with each other in docker compose?
+
+Docker Compose automatically creates a shared network for all services in the same file. Containers can reach each other using the service name as the hostname — for example, a web app can connect to a database at db:5432 without using IP addresses.
+
+---
+
+15- what is the difference between COPY  and ADD in a docker file?
+
+COPY simply copies files from your local machine into the image — it's the preferred choice for most use cases. ADD does the same but also supports extracting .tar files and fetching remote URLs. Best practice: always use COPY unless you specifically need ADD's extra features.
