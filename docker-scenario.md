@@ -30,4 +30,28 @@ By default, containers on separate networks can't communicate. Put both on the s
 
 ---
 
+5- your contanier consuming too much memory and gets killd, what do you do?
+
+Scenario: The container keeps restarting because the OOM (Out of Memory) killer terminates it.
+
+First confirm with docker inspect <id> — look for OOMKilled: true. Then either fix a memory leak in your app, or set a memory limit with --memory=512m to prevent it from eating the whole host. Also check if you're loading large files or caching too aggressively.
+
+---
+
+6- you docker image is 1.5gb, how would you reduce its size?
+
+Scenario: A colleague built an image for a Go app and it's unnecessarily large, slowing down CI/CD pipelines.
+
+Use a multi-stage build — compile the Go binary in a full build image, then copy only the binary into a minimal base like FROM scratch or alpine. Also: remove unnecessary packages, avoid installing build tools in the final image, and add a .dockerignore to exclude node_modules, .git, test files, etc.
+
+---
+
+7- every time you build docker rebulids all layers from scratch. how do you fix slow builds?
+
+Scenario: A simple code change triggers a full reinstall of all npm packages, making builds take 3+ minutes.
+
+This is a layer caching issue. In your Dockerfile, copy package.json and run npm install BEFORE copying your source code. Since package.json changes rarely, Docker caches the install layer. Only copy your app code after — that way only changed code layers rebuild.
+
+---
+
 
