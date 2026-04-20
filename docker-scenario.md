@@ -103,3 +103,18 @@ Run docker system prune to remove all stopped containers, dangling images, unuse
 
 ---
 
+14- a security scan fiends your docker image has critical cves. what your aproch? 
+
+Scenario: Your CI pipeline runs Trivy and flags 12 critical vulnerabilities in the base image.
+
+First, update your base image to the latest patch version — most CVEs are fixed in newer tags. Switch from a heavy base like ubuntu:latest to a minimal one like alpine or distroless to reduce attack surface. Remove any packages you installed but don't actually need, and re-run the scan to verify.
+
+---
+
+15- how do you privent secrets like api keys from liking in to docker image?
+
+Scenario: A developer accidentally hardcoded a DB password in the Dockerfile using ENV. It's now baked into every layer.
+
+Never use ENV or ARG for secrets — they're visible in image history via docker history. Instead, pass secrets at runtime using -e flags or a .env file that's in .dockerignore. In CI/CD, inject secrets from a secrets manager (Vault, AWS SSM). For build-time secrets, use --secret with BuildKit.
+
+---
