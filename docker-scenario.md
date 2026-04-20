@@ -71,3 +71,35 @@ Pull the last known good image by tag — e.g. docker pull myapp:v1.2.3 — and 
 
 ---
 
+10- a data base contanir loses all its data every time its restarts. how do you fix it?
+
+Scenario: Your Postgres container works fine, but after a docker stop and docker start, the database is empty.
+
+Mount a Docker volume to persist data. Run with -v pgdata:/var/lib/postgresql/data, or define it in Compose under volumes. The volume lives on the host independently of the container — so even if you remove and recreate the container, the data stays intact.
+
+---
+
+11- yout contanier keeps restarting in a loop. how do you dignose it?
+
+Scenario: docker ps shows your container with status "Restarting (1) 5 seconds ago" repeatedly.
+
+Run docker logs <container_id> immediately — it captures output from previous crash cycles too. The logs will usually tell you: missing env vars, port already in use, failed health check, or a crash in the entrypoint script. Fix the root cause before the restart policy hides it further.
+
+----
+
+12- you need to update an env varible for a running contanier. how do you do it without rebulding the image?
+
+Scenario: A config value changed and you want to apply it quickly without going through the full build pipeline.
+
+You can't update env vars of a running container — you must stop and recreate it. The clean way: stop the container, run it again with the new -e KEY=VALUE. If using Compose, update the env in your .env file and run docker compose up -d — Compose recreates only the affected service.
+
+---
+
+13- your server is running out of disk space due to docker. what do you clean up?
+
+Scenario: The /var/lib/docker directory has ballooned to 40 GB from old images, stopped containers, and dangling layers.
+
+Run docker system prune to remove all stopped containers, dangling images, unused networks, and build cache in one go. For a deeper clean including unused volumes, add -a --volumes. In production, set up a cron job or use --filter "until=24h" to automate regular cleanup.
+
+---
+
