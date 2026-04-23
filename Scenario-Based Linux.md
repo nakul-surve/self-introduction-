@@ -24,7 +24,7 @@ Then verify port using netstat/ss and check firewall or logs.
 4. You cannot connect to a server via SSH. What could be the issue?
 
 Check if SSH service is running (systemctl status ssh).
-Also verify security groups/firewall and correct IP, key, and permissions.
+Also verify security groups/firewall and correct IP, key, and permissions
 
 ---
 
