@@ -67,4 +67,4 @@ Then update using chmod or change ownership using chown.
 10. Application is slow. How will you troubleshoot?
 
 Check CPU, memory, and disk usage using top, free, iostat.
-Also check logs to identify bottlenecks or errors.
+Also check logs to identify bottlenecks or errors
