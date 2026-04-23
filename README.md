@@ -1,4 +1,4 @@
-# 🎯 Interview Revision — Nakul Surve
+# Interview Revision — Nakul Surve
 
 ---
 
