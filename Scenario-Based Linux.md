@@ -53,7 +53,7 @@ This helps identify memory-heavy processes.
 8. You need to run a task daily at 2 AM. What will you do?
 
 Use a cron job by editing crontab -e.
-Schedule the command with timing 0 2 * * *.
+Schedule the command with timing 0 2 *.
 
 ---
 
